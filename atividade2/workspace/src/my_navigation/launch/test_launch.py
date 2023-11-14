@@ -19,11 +19,11 @@ def generate_launch_description():
             output='screen',
         ),
 
-        ExecuteProcess(
-            cmd=['ros2', 'run', 'navigation', 'script.py'],  # Update to your actual script name
-            output='screen',
-            prefix='gnome-terminal --'
-        ),
+        # ExecuteProcess(
+        #     cmd=['ros2', 'run', 'navigation', 'script.py'],  # Update to your actual script name
+        #     output='screen',
+        #     prefix='gnome-terminal --'
+        # ),
         # Run Python script to move TurtleBot3
         Node(
             package='my_navigation',
