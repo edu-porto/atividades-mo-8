@@ -1,5 +1,7 @@
 import re
 
+# Funções que mostram para onde o rôbo vai 
+
 def get_screwdriver():
     return "Estou a caminho da chave de fenda"
 
@@ -31,6 +33,8 @@ def main():
         r"(porca)": get_nut,
         r"(chave\s*philips)": get_philips
     }
+
+    # Esse loop while tem a função de manter o script rodando 
     while True:
         command = input("Digite o seu comando: (Caso deseje sair digite 'SAIR') ")
         if command == 'SAIR':
