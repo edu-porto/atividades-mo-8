@@ -39,7 +39,7 @@ chain = (
     | model
 )
 
-user_input = input("O que você deseja ?")
+user_input = input("Olá como posso te ajudar  ?")
 
 for s in chain.stream(user_input):
     print(s, end="", flush=True)
