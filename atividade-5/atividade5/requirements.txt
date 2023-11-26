@@ -1,0 +1,5 @@
+gradio
+gradio-client
+langchain
+sentence-transformers
+chromadb

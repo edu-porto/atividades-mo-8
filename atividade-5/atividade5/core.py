@@ -6,10 +6,11 @@ from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddi
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
 from langchain.document_loaders import PyPDFLoader
+import gradio as gr
 
 
 # Carrega o documento e o divide para usar como contexto
-loader = TextLoader("./data/items.txt")
+loader = TextLoader("./data/rules.txt")
 documents = loader.load()
 
 # Divide em chunks
@@ -31,7 +32,7 @@ Question: {question}
 """
 prompt = ChatPromptTemplate.from_template(template)
 
-model = Ollama(model="dexter")
+model = Ollama(model="eike")
 
 chain = (
     {"context": retriever, "question": RunnablePassthrough()}
@@ -39,7 +40,26 @@ chain = (
     | model
 )
 
-user_input = input("Olá como posso te ajudar  ?")
 
-for s in chain.stream(user_input):
-    print(s, end="", flush=True)
+def user_interaction(user_input, data_send):
+    print("User sent : ", user_input)
+    mensage = ""
+    for s in chain.stream(user_input):
+        print(s, end="", flush=True)
+        mensage += s
+        yield mensage
+
+chatbot = gr.ChatInterface(user_interaction,
+    chatbot=gr.Chatbot(height=700),
+    textbox=gr.Textbox(placeholder="Ask me a question about industrial safety", container=False, scale=7),
+    title='The expert in workshop safety ',
+    theme="soft",
+    examples=["AM i allowed to eat inside the workshop ?",'What i have to do to use some paint ? '],
+    cache_examples=False,
+    retry_btn=None,
+    undo_btn="Delete Previous",
+    clear_btn="Clear"
+    ).queue()
+
+chatbot.launch()
+
