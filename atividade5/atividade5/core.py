@@ -5,7 +5,6 @@ from langchain.document_loaders import TextLoader
 from langchain.embeddings.sentence_transformer import SentenceTransformerEmbeddings
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.vectorstores import Chroma
-from langchain.document_loaders import PyPDFLoader
 import gradio as gr
 
 
@@ -54,7 +53,7 @@ chatbot = gr.ChatInterface(user_interaction,
     textbox=gr.Textbox(placeholder="Ask me a question about industrial safety", container=False, scale=7),
     title='The expert in workshop safety ',
     theme="soft",
-    examples=["AM i allowed to eat inside the workshop ?",'What i have to do to use some paint ? '],
+    examples=["Am i allowed to eat inside the workshop ?",'What i have to do to use some paint ? '],
     cache_examples=False,
     retry_btn=None,
     undo_btn="Delete Previous",
