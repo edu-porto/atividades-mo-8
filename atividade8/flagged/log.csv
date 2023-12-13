@@ -1,0 +1,5 @@
+audio,output,flag,username,timestamp
+,,,,2023-12-12 17:44:31.869418
+"{""path"":""flagged\\audio\\c18f82c729dd60bf61c4\\audio.wav"",""url"":""http://127.0.0.1:7860/file=C:\\Users\\eduar\\AppData\\Local\\Temp\\gradio\\458ac661934293d156fd586ceef878d4d52b51bf\\audio.wav"",""size"":259350,""orig_name"":""audio.wav"",""mime_type"":""""}",oi,,,2023-12-12 17:44:41.772673
+"{""path"":""flagged\\audio\\89097b125cfb9e6532ad\\audio.wav"",""url"":""http://127.0.0.1:7860/file=C:\\Users\\eduar\\AppData\\Local\\Temp\\gradio\\0a264c01ce8d49ca71f4fe184f19bc98c5d5cbb2\\audio.wav"",""size"":483884,""orig_name"":""audio.wav"",""mime_type"":""""}","{""label"":null,""confidences"":null}",,,,2023-12-13 18:30:09.574652
+"{""path"":""flagged\\audio\\1309da41cdd847730888\\audio.wav"",""url"":""http://127.0.0.1:7860/file=C:\\Users\\eduar\\AppData\\Local\\Temp\\gradio\\225acaa3988684dba33739694f09f3ebf5549eb5\\audio.wav"",""size"":299564,""orig_name"":""audio.wav"",""mime_type"":""""}","{""label"":null,""confidences"":null}",,,,2023-12-13 18:40:00.734049
